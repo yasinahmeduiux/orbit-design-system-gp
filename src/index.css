@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #2eade2;
+  --color-brand-dark: #1a89b8;
+  --color-surface: #fdfdfd;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black antialiased overflow-hidden select-none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black tracking-tighter leading-tight;
+  }
+}
+
+.slide-content-container {
+  @apply relative h-full w-full flex flex-col justify-center max-w-4xl mx-auto px-12 py-16 bg-surface;
+}
+
+.progress-bar {
+  @apply h-1 bg-brand transition-all duration-300;
+}
+
+/* Custom scrollbar for content overflow if any */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-200/50 rounded-full hover:bg-brand/30 transition-colors;
+}
+
+.geometric-bg {
+  background-image: radial-gradient(circle at 2px 2px, #f1f5f9 1px, transparent 0);
+  background-size: 24px 24px;
+}
